@@ -34,6 +34,28 @@ class Person {
   }
 }
 
-const person1 = new Person("Jhone Doe", 22);
-const person2 = new Person('Alice',25)
+
+
+
+
+
+
+type Item = {
+  title: string;
+  rating: number;
+};
+function filterByRating(items: Item[]): Item[] {
+  return items.filter((item) => item.rating >= 4);
+}
+
+
+type User = {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+function filterActiveUsers(users:User[]): User[] {
+  return users.filter(user=>user.isActive === true)
+}
 
