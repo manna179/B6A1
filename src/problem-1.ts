@@ -1,7 +1,7 @@
 // let value: number|string|boolean;
-let value: any;
 
-const formatValue = (value: any) => {
+
+const formatValue = (value: unknown) => {
   if (typeof value === "number") {
     return value * value;
   } else if (typeof value === "string") {
@@ -13,6 +13,28 @@ const formatValue = (value: any) => {
   }
 };
 
-console.log(formatValue(true));
-console.log(formatValue("true"));
-console.log(formatValue(2));
+
+const getLength = (input:string|(number[]|string[]))=>{
+if(typeof input === "string"){
+   return input.length
+}else if(Array.isArray(input)){
+    return input.length
+}else{
+    return
+}
+}
+
+
+class Person{
+    name:string;
+    age:number
+    constructor(name:string,age:number){
+        this.name = name,
+        this.age = age
+    }
+
+    getDetails(){
+
+    }
+}
+
