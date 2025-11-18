@@ -95,3 +95,28 @@ function getUniqueValues<T extends string | number>(arr1: T[], arr2: T[]): T[] {
 }
 
 
+
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+}
+function calculateTotalPrice(products: Product[]): number {
+  if (products.length === 0) return 0;
+
+  const totalPriceOfProduct = products.map((item) => {
+    const totalPrice = item.price * item.quantity;
+    const discountedPrice = item.discount
+      ? (totalPrice *item.discount) / 100
+      : 0;
+
+    return totalPrice - discountedPrice;
+  });
+  const netTotalPrice = totalPriceOfProduct.reduce(
+    (netPrice, currentPrice) => netPrice + currentPrice,
+    0
+  );
+  return netTotalPrice
+}
+
