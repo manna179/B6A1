@@ -1,4 +1,4 @@
-// let value: number|string|boolean;
+
 
 const formatValue = (value: unknown) => {
   if (typeof value === "number") {
